@@ -44,6 +44,7 @@ const niveles = [
 let nivelActual = 0;
 let indice = 0;
 let puntos = 0;
+let preguntasJugadas = 0;
 
 function mostrarPregunta() {
   const preguntas = niveles[nivelActual];
@@ -68,16 +69,17 @@ function mostrarPregunta() {
       document.getElementById("buttons").style.display = "none";
       document.getElementById("feedback").textContent = `Tu puntaje final fue: ${puntos} / 20`;
 
-      // ✅ Enviar puntaje al backend
+      // ✅ Enviar resultado al backend
       fetch('http://localhost:3000/api/resultados', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          nombre: "jugador",           // fijo
-          puntaje: puntos,             // puntos acumulados
-          nivel: nivelActual + 1       // niveles van de 0 a 9
+          nombre: "jugador",                  // puedes hacerlo dinámico si agregas un input
+          puntaje: puntos,
+          nivel: nivelActual + 1,
+          preguntas_jugadas: preguntasJugadas
         })
       })
       .then(res => res.json())
@@ -102,7 +104,12 @@ function answer(seleccion) {
       ? "😊 ¡Correcto!"
       : "🙃 Ups... incorrecto";
 
-    if (esCorrecto) puntos++;
+    preguntasJugadas++;
+
+    if (esCorrecto) {
+      puntos++;
+    }
+
     document.getElementById("score").textContent = `🌟 Puntos: ${puntos}`;
     indice++;
     setTimeout(mostrarPregunta, 1500);
@@ -110,3 +117,4 @@ function answer(seleccion) {
 }
 
 mostrarPregunta();
+
