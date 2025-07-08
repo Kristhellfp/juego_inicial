@@ -1,0 +1,111 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #004d40;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Glassmorphism Card */
+#question {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px 40px;
+  font-size: 1.6rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+#nivelLabel {
+  font-size: 1.2rem;
+  color: #00838f;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Botones principales */
+#buttons {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  letter-spacing: 0.5px;
+}
+
+button.true {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  color: white;
+}
+
+button.false {
+  background: linear-gradient(135deg, #e53935, #ef9a9a);
+  color: white;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Feedback dinámico */
+#feedback {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  min-height: 1.6rem;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+#feedback.correcto {
+  color: #2e7d32;
+}
+
+#feedback.incorrecto {
+  color: #c62828;
+}
+
+/* Puntos */
+#score {
+  font-size: 1.2rem;
+  color: #37474f;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}

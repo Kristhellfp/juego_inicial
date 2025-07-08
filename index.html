@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoTrivia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 EcoTrivia</h1>
+    <div class="nivel" id="nivelLabel"></div>
+    <div class="question" id="question"></div>
+    <div class="buttons" id="buttons">
+      <button class="true" onclick="answer(true)">✅ Verdadero</button>
+      <button class="false" onclick="answer(false)">❌ Falso</button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+    <div class="score" id="score">🌟 Puntos: 0</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
