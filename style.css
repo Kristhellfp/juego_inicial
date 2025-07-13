@@ -109,3 +109,36 @@ button:hover {
   text-align: center;
   margin-top: 10px;
 }
+/* Estilos para pantalla de resultados (resumen de partida) */
+
+#result-screen {
+  background-color: #f0fff0;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  padding: 25px 30px;
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f4f2f;
+}
+
+#result-screen p {
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+#ranking-info {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #196619;
+}
+
+#server-feedback {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+  color: #555;
+}
+
